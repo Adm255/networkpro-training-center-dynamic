@@ -1,3 +1,7 @@
+<?php
+include 'database/db.php';
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -107,6 +111,7 @@
         <p>&copy; 2026 NetworkPro Training Center. All Rights Reserved.</p>
     </footer>
     <script src="js/script.js"></script>
+
 </body>
 
 </html>
