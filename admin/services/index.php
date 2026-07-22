@@ -5,21 +5,17 @@ $query = "SELECT * FROM services";
 $result = mysqli_query($conn, $query);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php include '../../includes/header.php'; ?>
+<?php include '../../includes/navbar.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Services</title>
-</head>
-
-<body>
+<div class="container">
 
     <h1>Manage Services</h1>
 
     <p>
-        <a href="create.php">+ Add New Service</a>
+        <a href="create.php" class="btn btn-add">
+            + Add New Service
+        </a>
     </p>
 
     <table border="1" cellpadding="10">
@@ -42,8 +38,11 @@ $result = mysqli_query($conn, $query);
                     <?php echo $row['description']; ?>
                 </td>
                 <td>
-                    <a href="edit.php?id=<?php echo $row['id']; ?>">Edit</a> |
-                    <a href="delete.php?id=<?php echo $row['id']; ?>"
+                    <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-edit">
+                        Edit
+                    </a>
+
+                    <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-delete"
                         onclick="return confirm('Are you sure you want to delete this service?');">
                         Delete
                     </a>
@@ -52,7 +51,5 @@ $result = mysqli_query($conn, $query);
         <?php } ?>
 
     </table>
-
-</body>
-
-</html>
+</div>
+<?php include '../../includes/footer.php'; ?>
